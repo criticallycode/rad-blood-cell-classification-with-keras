@@ -5,7 +5,7 @@ from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping
 from keras.layers.normalization import BatchNormalization
 from keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
-from keras.applications import VGG16
+from keras.applications import VGG19
 
 train_dataset_path = "/images/TRAIN/"
 test_dataset_path = "/images/TEST/"
@@ -35,7 +35,7 @@ test_generator = test_datagen.flow_from_directory(
         seed=None,
         class_mode="categorical")
 
-vgg_conv = VGG16(weights='imagenet',
+vgg_conv = VGG19(weights='imagenet',
                  include_top=False,
                  input_shape=(240, 320, 3))
 
